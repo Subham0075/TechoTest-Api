@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - TECHOTEST</title>
+    <style>
+        body {
+            background: #121212;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            /* For Safari */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 300px;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: none;
+        }
+
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #00ffa2;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="registrationForm">
+        <h2>Register for TECHOTEST</h2>
+        <input type="text" name="full_name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <input type="tel" name="contact" placeholder="Mobile Number" required />
+        <button type="submit">Register</button>
+        <p id="message"></p>
+    </form>
+
+    <script>
+        const form = document.getElementById('registrationForm');
+        const message = document.getElementById('message');
+
+        form.addEventListener('submit', async (e) => {
+            let full_name = form.full_name.value;
+            let email = form.email.value;
+            let password = form.password.value;
+            let contact = form.contact.value;
+            e.preventDefault();
+            const formData = {
+                full_name: full_name,
+                email: email,
+                password: password,
+                contact: contact
+            };
+            console.log(formData)
+            const response = await fetch('../server/scripts/register.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.text();
+            message.innerText = result;
+        });
+    </script>
+
+</body>
+
+</html>

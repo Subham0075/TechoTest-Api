@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEJAVU01</title>
+  <link rel="stylesheet" href="./style.css" />
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <!-- TradingView Ticker -->
+  <div class="ticker-widget">
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+      async>
+        {
+          "symbols": [
+            { "proName": "BSE:SENSEX", "title": "Sensex" },
+            { "proName": "FX_IDC:USDINR", "title": "USD/INR" },
+            { "proName": "OANDA:XAUUSD", "title": "Gold" },
+            { "proName": "TVC:NI225", "title": "Nikkei 225" },
+            { "proName": "SSE:000001", "title": "Shanghai Index" },
+            { "proName": "BINANCE:BTCUSDT", "title": "BTC/USDT" },
+            { "proName": "NASDAQ:IXIC", "title": "NASDAQ" }
+          ],
+            "showSymbolLogo": true,
+              "colorTheme": "dark",
+                "isTransparent": true,
+                  "displayMode": "regular",
+                    "locale": "en"
+        }
+      </script>
+  </div>
+
+  <div class="background"></div>
+
+  <!-- First component (Image only, no Watch Now button) -->
+  <div class="component-card" data-aos="fade-up">
+    <img src="assets/placeholder.jpg" alt="Component Image" class="component-img" />
+  </div>
+
+  <!-- Book Now Button -->
+  <div class="button-wrapper">
+    <button class="book-btn"><a href="./register.html">Book Now</a></button>
+  </div>
+
+  <!-- Second component (Video) -->
+  <div class="component-card video-card" data-aos="fade-up">
+    <iframe class="component-video" src="https://www.youtube.com/embed/4nYRoLNXr44"
+      title="Pakistan Warns of 130 Nuclear Missiles in War Against India" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+  </div>
+
+
+  <!-- Mentor Section -->
+  <div class="mentor-section" data-aos="fade-up">
+    <h2 class="mentor-heading">Meet Your Mentor</h2>
+    <div class="mentor-card">
+      <div class="mentor-profile" data-tilt>
+        <img src="assets/profilepic.jpeg" alt="Mentor" />
+      </div>
+      <div class="mentor-info">
+        <img src="assets/image2.jpg" alt="Mentor Details" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Component 3 -->
+  <div class="component-card" data-aos="fade-up">
+    <img src="assets/image3.jpg" alt="Component 3" class="component-img" />
+  </div>
+  <!-- Static Webinar Details Component with Countdown -->
+  <!-- Static Webinar Details Component with Countdown and Book Button -->
+  <div class="component-card" data-aos="fade-up">
+    <h2 style="color: white; margin-bottom: 1rem;">Webinar Details</h2>
+    <p style="color:white; font-size: 1.1rem;"><b>Next Webinar:</b> <span id="webinarDate"></span></p>
+    <p style="color:white; font-size: 1.1rem;"><b>Price:</b> ₹499 only</p>
+    <div id="countdown" style="margin-top: 1rem; color: #00ffff; font-weight: bold; font-size: 1.2rem;"></div>
+    <p style="color:white; margin-top:1rem;">This webinar will guide you through real-time AI-powered financial
+      predictions and show you how to leverage them for smarter decision making.</p>
+
+    <div class="button-wrapper" style="margin-top: 2rem;">
+      <button class="book-btn">Book Now</button>
+    </div>
+  </div>
+
+  <!-- Image Component 4 -->
+  <div class="component-card" data-aos="fade-up">
+    <img src="assets/image4.jpg" alt="Component 4" class="component-img" />
+  </div>
+  <!-- Image Component 5 -->
+  <div class="component-card" data-aos="fade-up">
+    <img src="assets/image5.jpg" alt="Component 5" class="component-img" />
+  </div>
+
+  <!-- Image Component 6 -->
+  <div class="component-card" data-aos="fade-up">
+    <img src="assets/image6.jpg" alt="Component 6" class="component-img" />
+  </div>
+
+  <div class="button-wrapper" style="margin-top: 2rem;">
+    <button class="book-btn">Book Now</button>
+  </div>
+
+  <!-- Features Video Grid -->
+  <div class="features-section" data-aos="fade-up">
+    <div class="features-grid">
+      <div class="feature-card">
+        <video src="assets/card1.mp4" autoplay muted loop class="feature-video"></video>
+        <div class="feature-title">Real-Time Data</div>
+      </div>
+      <div class="feature-card">
+        <video src="assets/card2.mp4" autoplay muted loop class="feature-video"></video>
+        <div class="feature-title">AI Engine</div>
+      </div>
+      <div class="feature-card">
+        <video src="assets/card3.mp4" autoplay muted loop class="feature-video"></video>
+        <div class="feature-title">Nifty 50 Focus</div>
+      </div>
+      <div class="feature-card">
+        <video src="assets/card4.mp4" autoplay muted loop class="feature-video"></video>
+        <div class="feature-title">Bitcoin Coverage</div>
+      </div>
+      <div class="feature-card">
+        <video src="assets/card5.mp4" autoplay muted loop class="feature-video"></video>
+        <div class="feature-title">Smart UI</div>
+      </div>
+      <div class="feature-card">
+        <video src="assets/card6.mp4" autoplay muted loop class="feature-video"></video>
+        <div class="feature-title">Prediction Logs</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials Section -->
+  <div class="testimonials-section" data-aos="fade-up">
+    <h2 class="testimonial-heading">What Our Users Say</h2>
+    <div class="testimonial-container" id="testimonialContainer">
+      <!-- Testimonial Cards -->
+      <img src="assets/testimonial1.jpg" class="testimonial-card" alt="Testimonial 1" />
+      <img src="assets/testimonial2.jpg" class="testimonial-card" alt="Testimonial 2" />
+      <img src="assets/testimonial3.jpg" class="testimonial-card" alt="Testimonial 3" />
+      <img src="assets/testimonial4.jpg" class="testimonial-card" alt="Testimonial 4" />
+      <img src="assets/testimonial5.jpg" class="testimonial-card" alt="Testimonial 5" />
+      <img src="assets/testimonial6.jpg" class="testimonial-card" alt="Testimonial 6" />
+      <img src="assets/testimonial7.jpg" class="testimonial-card" alt="Testimonial 7" />
+      <img src="assets/testimonial8.jpg" class="testimonial-card" alt="Testimonial 8" />
+      <img src="assets/testimonial9.jpg" class="testimonial-card" alt="Testimonial 9" />
+      <img src="assets/testimonial10.jpg" class="testimonial-card" alt="Testimonial 10" />
+    </div>
+  </div>
+  <div class="button-wrapper" style="margin-top: 2rem;">
+    <button class="book-btn">Book Now</button>
+  </div>
+
+  <!-- Final Component with Image and Demo Button -->
+  <div class="component-card" data-aos="fade-up">
+    <img src="assets/image7.jpg" alt="Final Visual" class="component-img" />
+  </div>
+
+  <!-- Footer Button -->
+  <div class="button-wrapper" style="margin-top: 2rem; width: 100%;">
+    <a href="demo.html" class="book-btn">WATCH DEMO VIDEO</a>
+  </div>
+
+  <!-- FAQ Title Header -->
+  <div class="faq-header-glass" data-aos="fade-up">
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+  </div>
+
+  <!-- FAQ Question Components -->
+  <div class="faq-card" data-aos="fade-up">
+    <button class="faq-toggle">❓ How do I join the webinar?</button>
+    <div class="faq-content">After registering, you’ll receive an email with the Zoom link and instructions.</div>
+  </div>
+
+  <div class="faq-card" data-aos="fade-up">
+    <button class="faq-toggle">❓ Will I get a recording if I miss the session?</button>
+    <div class="faq-content">No, this is a LIVE interactive session only.</div>
+  </div>
+
+  <div class="faq-card" data-aos="fade-up">
+    <button class="faq-toggle">❓ Is there a refund policy?</button>
+    <div class="faq-content">Yes! 100% Money-Back Guarantee if you don’t find the session valuable.</div>
+  </div>
+
+  <div class="faq-card" data-aos="fade-up">
+    <button class="faq-toggle">❓ Can my family or friends attend with me?</button>
+    <div class="faq-content">Yes! You can attend together on one device.</div>
+  </div>
+
+  <!-- Final Urgency Call-To-Action Section -->
+  <div class="final-cta-card" data-aos="fade-up">
+    <h2>⚡ LIMITED SPOTS AVAILABLE – REGISTER NOW FOR ₹99!</h2>
+    <p>📍 Offer Expires in <span id="offer-timer">01:00:00</span></p>
+    <p>🚀 Take the First Step Towards Financial Freedom!</p>
+
+    <div class="button-wrapper" style="margin-top: 1rem;">
+      <button class="book-btn">🔴 Book Now</button>
+    </div>
+  </div>
+
+
+  <!-- SCRIPT SECTION BELOW -->
+
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <script>
+    VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+      max: 15,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.2,
+    });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true, // animate only once
+      duration: 1000, // animation duration in ms
+      easing: 'ease-out-cubic', // smooth easing
+    });
+  </script>
+  <script>
+    function getNextSunday6PM() {
+      const now = new Date();
+      const day = now.getDay();
+      const distance = (7 - day) % 7 || 7; // if today is Sunday, get next Sunday
+      const nextSunday = new Date(now.getFullYear(), now.getMonth(), now.getDate() + distance, 18, 0, 0); // 6 PM
+      return nextSunday;
+    }
+
+    function updateCountdown() {
+      const now = new Date();
+      const eventDate = getNextSunday6PM();
+      const gap = eventDate - now;
+
+      const second = 1000;
+      const minute = second * 60;
+      const hour = minute * 60;
+      const day = hour * 24;
+
+      const d = Math.floor(gap / day);
+      const h = Math.floor((gap % day) / hour);
+      const m = Math.floor((gap % hour) / minute);
+      const s = Math.floor((gap % minute) / second);
+
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById("webinarDate").textContent = eventDate.toLocaleDateString('en-IN', options);
+
+      if (gap > 0) {
+        document.getElementById("countdown").textContent = `⏳ Starts In: ${d}d ${h}h ${m}m ${s}s`;
+      } else {
+        document.getElementById("countdown").textContent = `🎉 Webinar is Live or Completed`;
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+  </script>
+  <script>
+    let scrollIndex = 0;
+    const container = document.getElementById("testimonialContainer");
+    const cards = document.querySelectorAll(".testimonial-card");
+
+    setInterval(() => {
+      scrollIndex++;
+      const cardWidth = cards[0].offsetWidth + 16; // 16px gap
+      const maxScroll = container.scrollWidth - container.clientWidth;
+
+      const nextScrollLeft = scrollIndex * cardWidth;
+
+      if (nextScrollLeft >= maxScroll) {
+        scrollIndex = 0;
+        container.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        container.scrollTo({ left: nextScrollLeft, behavior: "smooth" });
+      }
+    }, 4000);
+  </script>
+
+
+</body>
+
+
+</html>

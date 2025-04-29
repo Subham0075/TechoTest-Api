@@ -1,0 +1,454 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    min-height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+    scroll-behavior: smooth;
+  }
+  
+  /* Background with fallback & proper z-index */
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('./assets/bg.jpeg') no-repeat center center / cover;
+    z-index: -1;
+    opacity: 1;
+  }
+  
+  .background::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+  }
+  
+  /* Generic Component Style */
+  .component-card {
+    width: 90%;
+    max-width: 420px;
+    aspect-ratio: 390 / 321;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+    min-height: 300px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .component-card {
+      max-width: 900px;
+      aspect-ratio: 16 / 9;
+    }
+  }
+  
+  .component-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+  
+  .watch-btn, .back-btn {
+    position: absolute;
+    bottom: 1rem;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .watch-btn:hover,
+  .back-btn:hover {
+    background: rgba(255, 255, 255, 0.35);
+  }
+  
+  .watch-btn {
+    bottom: 1rem;
+  }
+  
+  .video-card .component-video {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .back-btn {
+    position: relative;
+    margin-top: 1rem;
+  }
+  
+  .button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* NEW */
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* .book-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: white;
+    font-weight: bold;
+    padding: 0.6rem 1.8rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  } */
+  
+  .book-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: white;
+    font-weight: bold;
+    padding: 0.8rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    min-width: 180px;  /* NEW ADDITION */
+    text-align: center; /* NEW ADDITION */
+  }  
+
+  .book-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
+  }
+  
+  /* Ticker widget area */
+  .ticker-widget {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  /* Mentor Section */
+  .mentor-section {
+    width: 100%;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: white;
+  }
+  
+  .mentor-heading {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .mentor-card {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  }
+  
+  .mentor-profile img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 0 25px 4px #00ffff; /* Neon glow */
+    transition: transform 0.3s;
+  }
+  
+  .mentor-info img {
+    max-width: 100%;
+    border-radius: 15px;
+    object-fit: contain;
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+  }
+  
+  @media (max-width: 768px) {
+    .mentor-card {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .testimonials-section {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  .testimonial-heading {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .testimonial-container {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1rem;
+    max-width: 100%;
+  }
+  
+  .testimonial-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .testimonial-card {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: transform 0.3s ease;
+  }
+  
+  
+  .testimonial-card:hover {
+    transform: scale(1.03);
+  }
+  .features-section {
+    padding: 3rem 1rem;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+  }
+  
+  .feature-card {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  .feature-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+  }
+  
+  .feature-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+    z-index: 2;
+    text-shadow: 0 0 5px rgba(0,0,0,0.6);
+  }
+  /* Fix image7 + footer-button layout */
+.component-card:last-of-type {
+  margin-bottom: 4rem;
+}
+
+/* Ensure buttons on narrow devices have some breathing room */
+@media screen and (max-width: 600px) {
+  .component-card {
+    padding: 0.5rem;
+  }
+
+  .book-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .component-img {
+    border-radius: 12px;
+  }
+
+  .component-card.video-card {
+    /* max-width: 95%; */
+    width: 100%;
+    height: 100%;
+    border-radius: 15px; /* Rounded corners still apply */
+    object-fit: cover; /* This will be ignored by iframe but doesn't hurt */
+  }
+
+  .component-video {
+    max-height: 60vh;
+  }
+}
+.faq-title {
+  font-size: 1.8rem;
+}
+.faq-card {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto 1rem auto;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.faq-toggle {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 1rem;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.faq-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 1rem;
+}
+.faq-card.active .faq-content {
+  max-height: 200px;
+  padding: 1rem;
+}
+.faq-header-glass {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 25px;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.faq-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 0 6px rgba(0, 255, 255, 0.3);
+  letter-spacing: 1px;
+}
+.final-cta-card {
+  width: 90%;
+  max-width: 800px;
+  margin: 3rem auto 2rem;
+  padding: 2rem;
+  background: rgba(255, 0, 0, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.25);
+  color: white;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  animation: pulse 1.5s infinite ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.final-cta-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.7rem;
+  color: #ff6b6b;
+}
+
+.final-cta-card p {
+  margin: 0.5rem 0;
+  font-size: 1.05rem;
+}
+
+#offer-timer {
+  font-weight: bold;
+  color: #00ffff;
+  font-size: 1.1rem;
+}
+
+/* Optional glow animation */
+@keyframes pulse {
+  0% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.1); }
+  50% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.3); }
+  100% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.1); }
+}
+.embedded-video {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover; /* not necessary for iframe but safe */
+  border: none;
+}
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

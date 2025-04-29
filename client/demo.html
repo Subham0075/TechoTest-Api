@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo Video</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Background (same as main site) -->
+  <div class="background"></div>
+
+  <!-- Demo Video Card -->
+    <div class="component-card video-card" data-aos="fade-up" style="max-width: 800px; margin-top: 4rem;">
+      <iframe class="embedded-video"
+        src="https://www.youtube.com/embed/nwsxNt0qdYM"
+        title="Indian Government asks Media not to show LIVE telecast of Defence Forces"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <!-- Back To Home Button -->
+    <div class="button-wrapper" style="margin-top: 1.5rem;">
+      <a href="index.html" class="book-btn">← Back to Home</a>
+    </div>
+
+    <!-- Book Now Button -->
+    <div class="button-wrapper">
+      <button class="book-btn">Book Now</button>
+    </div>
+
+  </div>
+
+  <!-- AOS for animation -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 1000,
+      easing: 'ease-out-cubic',
+    });
+  </script>
+</body>
+
+</html>
